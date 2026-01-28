@@ -1,7 +1,7 @@
+#include "functions.h"
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "functions.h"
 
 int main(int argc, char *argv[]) {
   if (argc != 3) {
