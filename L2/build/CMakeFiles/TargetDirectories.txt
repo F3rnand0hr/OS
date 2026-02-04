@@ -1,0 +1,3 @@
+/home/fslabs/os_071_16/Documents/OS/L2/build/CMakeFiles/inventory.dir
+/home/fslabs/os_071_16/Documents/OS/L2/build/CMakeFiles/edit_cache.dir
+/home/fslabs/os_071_16/Documents/OS/L2/build/CMakeFiles/rebuild_cache.dir

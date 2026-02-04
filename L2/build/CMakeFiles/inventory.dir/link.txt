@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/inventory.dir/src/main.c.o CMakeFiles/inventory.dir/src/functions.c.o -o inventory  -lm 
