@@ -1,0 +1,3 @@
+/home/fslabs/os_071_16/Documents/OS/Lab2/L1/build/CMakeFiles/compilator.dir
+/home/fslabs/os_071_16/Documents/OS/Lab2/L1/build/CMakeFiles/edit_cache.dir
+/home/fslabs/os_071_16/Documents/OS/Lab2/L1/build/CMakeFiles/rebuild_cache.dir

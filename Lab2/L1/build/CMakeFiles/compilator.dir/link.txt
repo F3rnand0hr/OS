@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/compilator.dir/src/main.c.o -o compilator  -lm 
