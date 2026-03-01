@@ -1,0 +1,1 @@
+./style_test.sh: line 9: ./cpplint.py: Permission denied

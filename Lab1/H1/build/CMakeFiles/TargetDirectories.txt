@@ -1,0 +1,3 @@
+/Users/fer/Downloads/H1/build/CMakeFiles/course_grades_calculator.dir
+/Users/fer/Downloads/H1/build/CMakeFiles/edit_cache.dir
+/Users/fer/Downloads/H1/build/CMakeFiles/rebuild_cache.dir

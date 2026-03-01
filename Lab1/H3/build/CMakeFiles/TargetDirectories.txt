@@ -1,0 +1,3 @@
+/Users/fer/Downloads/H3/build/CMakeFiles/point_distances.dir
+/Users/fer/Downloads/H3/build/CMakeFiles/edit_cache.dir
+/Users/fer/Downloads/H3/build/CMakeFiles/rebuild_cache.dir

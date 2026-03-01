@@ -1,0 +1,3 @@
+/Users/fer/Downloads/H2/build/CMakeFiles/console_calculator.dir
+/Users/fer/Downloads/H2/build/CMakeFiles/edit_cache.dir
+/Users/fer/Downloads/H2/build/CMakeFiles/rebuild_cache.dir
