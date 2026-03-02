@@ -1,0 +1,3 @@
+/Users/fer/Documents/OS/Lab2/H2-2/command_center/build/CMakeFiles/center.dir
+/Users/fer/Documents/OS/Lab2/H2-2/command_center/build/CMakeFiles/edit_cache.dir
+/Users/fer/Documents/OS/Lab2/H2-2/command_center/build/CMakeFiles/rebuild_cache.dir

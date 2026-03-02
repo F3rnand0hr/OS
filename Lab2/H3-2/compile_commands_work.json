@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/Users/fer/Documents/OS/Lab2/H3-2/worker/build",
+  "command": "/usr/bin/cc  -I/Users/fer/Documents/OS/Lab2/H3-2/worker/include  -o CMakeFiles/worker.dir/src/main.c.o -c /Users/fer/Documents/OS/Lab2/H3-2/worker/src/main.c",
+  "file": "/Users/fer/Documents/OS/Lab2/H3-2/worker/src/main.c",
+  "output": "CMakeFiles/worker.dir/src/main.c.o"
+}
+]

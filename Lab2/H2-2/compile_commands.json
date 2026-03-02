@@ -1,0 +1,26 @@
+[
+  {
+    "directory": "/Users/fer/Documents/OS/Lab2/H2-2/command_center/build",
+    "command": "/usr/bin/cc  -I/Users/fer/Documents/OS/Lab2/H2-2/command_center/include  -o CMakeFiles/center.dir/src/main.c.o -c /Users/fer/Documents/OS/Lab2/H2-2/command_center/src/main.c",
+    "file": "/Users/fer/Documents/OS/Lab2/H2-2/command_center/src/main.c",
+    "output": "CMakeFiles/center.dir/src/main.c.o"
+  },
+  {
+    "directory": "/Users/fer/Documents/OS/Lab2/H2-2/command_center/build",
+    "command": "/usr/bin/cc  -I/Users/fer/Documents/OS/Lab2/H2-2/command_center/include  -o CMakeFiles/center.dir/src/functions.c.o -c /Users/fer/Documents/OS/Lab2/H2-2/command_center/src/functions.c",
+    "file": "/Users/fer/Documents/OS/Lab2/H2-2/command_center/src/functions.c",
+    "output": "CMakeFiles/center.dir/src/functions.c.o"
+  },
+  {
+    "directory": "/Users/fer/Documents/OS/Lab2/H2-2/drone/build",
+    "command": "/usr/bin/cc  -I/Users/fer/Documents/OS/Lab2/H2-2/drone/include  -o CMakeFiles/drone.dir/src/main.c.o -c /Users/fer/Documents/OS/Lab2/H2-2/drone/src/main.c",
+    "file": "/Users/fer/Documents/OS/Lab2/H2-2/drone/src/main.c",
+    "output": "CMakeFiles/drone.dir/src/main.c.o"
+  },
+  {
+    "directory": "/Users/fer/Documents/OS/Lab2/H2-2/drone/build",
+    "command": "/usr/bin/cc  -I/Users/fer/Documents/OS/Lab2/H2-2/drone/include  -o CMakeFiles/drone.dir/src/functions.c.o -c /Users/fer/Documents/OS/Lab2/H2-2/drone/src/functions.c",
+    "file": "/Users/fer/Documents/OS/Lab2/H2-2/drone/src/functions.c",
+    "output": "CMakeFiles/drone.dir/src/functions.c.o"
+  }
+]

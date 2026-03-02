@@ -1,0 +1,6 @@
+Done processing ../command_center/include/functions.h
+Done processing ../command_center/src/functions.c
+Done processing ../command_center/src/main.c
+Done processing ../drone/include/functions.h
+Done processing ../drone/src/functions.c
+Done processing ../drone/src/main.c

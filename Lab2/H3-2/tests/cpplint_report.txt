@@ -1,0 +1,4 @@
+Done processing ../generator/include/functions.h
+Done processing ../generator/src/main.c
+Done processing ../worker/include/functions.h
+Done processing ../worker/src/main.c
