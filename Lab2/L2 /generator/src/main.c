@@ -29,7 +29,7 @@ int main() {
   while (sent < TOTAL_NUMBERS) {
     usleep(200000);
     int num = rand() % 500 + 1;
-    if (mq_send(mq, (char *)&num, sizeof(int), 0) == -1) {
+    if (mq_send(mq, (char *)&num, sizeof(int), 0) == -1) {   // reference and &
       if (errno == EAGAIN) {
         printf("waiting to send number...\n");
       } else {
