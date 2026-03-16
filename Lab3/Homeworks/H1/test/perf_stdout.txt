@@ -1,0 +1,8 @@
+Thread 0 finished rows 0 to 4 | PARTIAL_SUM: 66500
+Thread 1 finished rows 5 to 9 | PARTIAL_SUM: 66500
+Thread 2 finished rows 10 to 14 | PARTIAL_SUM: 66500
+Thread 3 finished rows 15 to 19 | PARTIAL_SUM: 66500
+=== Result ===
+COUNT: 400
+SUM: 266000
+PARTIALS_SUM: 266000

@@ -1,3 +1,0 @@
-/Users/fer/Documents/OS/Lab2/H2-2/drone/build/CMakeFiles/drone.dir
-/Users/fer/Documents/OS/Lab2/H2-2/drone/build/CMakeFiles/edit_cache.dir
-/Users/fer/Documents/OS/Lab2/H2-2/drone/build/CMakeFiles/rebuild_cache.dir

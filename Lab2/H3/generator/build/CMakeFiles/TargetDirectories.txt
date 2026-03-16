@@ -1,3 +1,0 @@
-/Users/fer/Documents/OS/Lab2/H3-2/generator/build/CMakeFiles/generator.dir
-/Users/fer/Documents/OS/Lab2/H3-2/generator/build/CMakeFiles/edit_cache.dir
-/Users/fer/Documents/OS/Lab2/H3-2/generator/build/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,5 @@
+../src/functions.c:47:  Function name 'strcmp' should use CamelCase and start with an uppercase letter.  [readability/naming] [4]
+Done processing ../include/functions.h
+Done processing ../src/functions.c
+Done processing ../src/main.c
+Total errors found: 1
