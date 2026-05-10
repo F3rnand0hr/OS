@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdint.h>
 #include <sys/resource.h>
 #include <sys/wait.h>
 #include <time.h>
@@ -9,7 +10,7 @@
 #include "../include/functions.h"
 
 enum { kExpectedBursts = 30, kChildrenPerBurst = 3 };
-static const int64_t kDefaultIterations = 30000000;
+static const int64_t k_default_iterations = 30000000;
 
 static int PinSelfToCore0(void) {
 #ifdef __linux__
@@ -75,7 +76,7 @@ static void ConfigureChild(int policy_macro, int nice_value) {
 }
 
 int main(int argc, char** argv) {
-  int64_t iterations = kDefaultIterations;
+  int64_t iterations = k_default_iterations;
   if (argc >= 2) iterations = atoll(argv[1]);
 
   Instruction plan[kExpectedBursts];
