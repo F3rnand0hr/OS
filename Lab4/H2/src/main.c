@@ -7,16 +7,16 @@
 #include <unistd.h>
 
 // --- Configuration ---
-#define BLOCK_SIZE_KB 64  // Size of each block in Kilobytes
-#define BLOCK_SIZE (BLOCK_SIZE_KB * 1024)
 #define PROC_MAPS_PATH "/proc/self/maps"
+/* "start-end" in /proc/maps can need 16 + 1 + 16 hex digits + NUL. */
+#define OS_MAP_RANGE_MAX 40
 
 // Structure to hold the details of each memory block
 typedef struct {
   char name[20];
   int* address;
   size_t size;
-  char os_map_range[30];  // Stores the range read from /proc/maps
+  char os_map_range[OS_MAP_RANGE_MAX];  // Range from /proc/self/maps
 } MemoryBlock;
 
 // Global array to store block information
@@ -30,7 +30,8 @@ MemoryBlock blocks[4];
  * @param output_buffer Buffer to store the resulting range (e.g.,
  * 7fff0000-7fff4000).
  */
-void GetOsMapRange(void* addr, char* output_buffer, size_t output_buffer_len) {
+void GetOsMapRange(const void* addr, char* output_buffer,
+                   size_t output_buffer_len) {
   FILE* f = fopen(PROC_MAPS_PATH, "r");
   char line[256];
   uint64_t start = 0;
@@ -103,9 +104,11 @@ void CreateMemoryBlocks() {
     blocks[i].name[sizeof(blocks[i].name) - 1] = '\0';
     blocks[i].size = spec[i].size;
 
-    void* p = mmap(spec[i].addr, spec[i].size, prot, spec[i].flags, fd, offset);
+    void* p =
+        mmap(spec[i].addr, spec[i].size, prot, spec[i].flags, fd, offset);
     if (p == MAP_FAILED && (spec[i].flags & MAP_FIXED)) {
-      p = mmap(NULL, spec[i].size, prot, MAP_PRIVATE | MAP_ANONYMOUS, fd, offset);
+      p = mmap(NULL, spec[i].size, prot, MAP_PRIVATE | MAP_ANONYMOUS, fd,
+               offset);
     }
     if (p == MAP_FAILED) {
       exit(1);
