@@ -2,7 +2,6 @@
 **/.DS_Store
 
 # CMake build directories and artifacts (keep CMakeLists.txt, src/, include/)
-**/build/
 **/cmake-build-*/
 CMakeCache.txt
 **/CMakeCache.txt

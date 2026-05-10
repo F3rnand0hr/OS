@@ -1,0 +1,5 @@
+Name,Status,Reported_Addr,Mapped_Range,Size_Check(KB),Score
+3:BLOCK_0_AUTO_A,[0;31mFAIL (Range not found in OS maps)[0m,0x102a7c000,N/A,Reported: 64 KB,[0;32mOK (Value: 100)[0m
+4:BLOCK_1_AUTO_B,[0;31mFAIL (Range not found in OS maps)[0m,0x102a8c000,N/A,Reported: 128 KB,[0;32mOK (Value: 200)[0m
+5:BLOCK_2_HINT_1,[0;31mFAIL (Range not found in OS maps)[0m,0x102aac000,N/A,Reported: 64 KB,[0;32mOK (Value: 300)[0m
+6:BLOCK_3_HINT_2,[0;31mFAIL (Range not found in OS maps)[0m,0x102abc000,N/A,Reported: 64 KB,[0;32mOK (Value: 400)[0m
