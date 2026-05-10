@@ -1,0 +1,43 @@
+.DS_Store
+**/.DS_Store
+
+# CMake build directories and artifacts (keep CMakeLists.txt, src/, include/)
+**/build/
+**/cmake-build-*/
+CMakeCache.txt
+**/CMakeCache.txt
+CMakeFiles/
+**/CMakeFiles/
+cmake_install.cmake
+**/cmake_install.cmake
+Makefile
+**/Makefile
+compile_commands.json
+**/compile_commands.json
+install_manifest.txt
+**/install_manifest.txt
+
+# Editor/IDE
+.vscode/
+**/.vscode/
+.idea/
+**/.idea/
+
+# OS / misc
+Thumbs.db
+
+# Binaries / objects (C/C++)
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+*.exe
+*.out
+*.dSYM/
+*.d
+
+# Logs
+*.log
