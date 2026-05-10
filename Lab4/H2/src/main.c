@@ -9,7 +9,8 @@
 // --- Configuration ---
 #define PROC_MAPS_PATH "/proc/self/maps"
 /* "start-end" in /proc/maps can need 16 + 1 + 16 hex digits + NUL. */
-#define OS_MAP_RANGE_MAX 40
+/* First column length varies (kernel may zero-pad); keep a safe margin. */
+#define OS_MAP_RANGE_MAX 64
 
 // Structure to hold the details of each memory block
 typedef struct {
@@ -46,13 +47,24 @@ void GetOsMapRange(const void* addr, char* output_buffer,
   }
 
   while (fgets(line, sizeof(line), f)) {
-    if (sscanf(line, "%" SCNx64 "-%" SCNx64, &start, &end) == 2) {
-      if (addr_val >= start && addr_val < end) {
-        snprintf(output_buffer, output_buffer_len, "%" PRIx64 "-%" PRIx64,
-                 start, end);
-        fclose(f);
-        return;
+    const char* sep = strpbrk(line, " \t");
+    if (sep == NULL) {
+      continue;
+    }
+    if (sscanf(line, "%" SCNx64 "-%" SCNx64, &start, &end) != 2) {
+      continue;
+    }
+    if (addr_val >= start && addr_val < end) {
+      /* Copy the first maps column verbatim so it matches grep against
+       * /proc/[pid]/maps (re-printing with PRIx64 can omit kernel padding). */
+      size_t field_len = (size_t)(sep - line);
+      if (field_len >= output_buffer_len) {
+        field_len = output_buffer_len - 1U;
       }
+      memcpy(output_buffer, line, field_len);
+      output_buffer[field_len] = '\0';
+      fclose(f);
+      return;
     }
   }
 
