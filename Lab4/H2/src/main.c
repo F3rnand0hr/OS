@@ -55,8 +55,6 @@ void GetOsMapRange(const void* addr, char* output_buffer,
       continue;
     }
     if (addr_val >= start && addr_val < end) {
-      /* Copy the first maps column verbatim so it matches grep against
-       * /proc/[pid]/maps (re-printing with PRIx64 can omit kernel padding). */
       size_t field_len = (size_t)(sep - line);
       if (field_len >= output_buffer_len) {
         field_len = output_buffer_len - 1U;
@@ -127,7 +125,16 @@ void CreateMemoryBlocks() {
     }
     blocks[i].address = (int*)p;
     blocks[i].address[0] = spec[i].value;
-    GetOsMapRange(p, blocks[i].os_map_range,
+  }
+
+  /*
+   * IMPORTANT: read /proc/self/maps after all mmaps are done.
+   * The kernel can merge adjacent anonymous mappings into a single VMA,
+   * changing the "start-end" range strings. The test script greps that exact
+   * range in /proc/<pid>/maps, so we must capture the final ranges.
+   */
+  for (int i = 0; i < 4; i++) {
+    GetOsMapRange(blocks[i].address, blocks[i].os_map_range,
                   sizeof(blocks[i].os_map_range));
   }
 }
