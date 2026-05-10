@@ -69,24 +69,6 @@ void GetOsMapRange(const void* addr, char* output_buffer,
   fclose(f);
 }
 
-// --- Core Task Function ---
-
-/**
- * @brief Creates four distinct memory blocks using mmap().
- * * REQUIRED POSIX FUNCTION: mmap(void *addr, size_t length, int prot, int
- * flags, int fd, off_t offset)
- * * TASK: Create the following four memory blocks, storing the returned address
- * in the blocks array:
- * * 1. BLOCK 0 (Auto-Assigned): Use NULL for the addr parameter.
- * 2. BLOCK 1 (Another Auto-Assigned): Use NULL for the addr parameter again.
- * 3. BLOCK 2 (Hinted Address 1): Use a specific, high-address hint (e.g.,
- * 0x70000000) for the addr parameter, using the MAP_FIXED flag to make the
- * request mandatory.
- * 4. BLOCK 3 (Hinted Address 2): Use a different specific, high-address hint
- * (e.g., 0x80000000) for the addr parameter, using the MAP_FIXED flag.
- * * NOTE: MAP_FIXED is aggressive and may fail if the address is already in
- * use.
- */
 void CreateMemoryBlocks() {
   struct {
     const char* name;
