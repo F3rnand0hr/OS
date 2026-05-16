@@ -3,6 +3,7 @@ project(SchedulerPrioridades C)
 
 set(CMAKE_C_STANDARD 11)
 
+find_package(Threads REQUIRED)
 
 # Incluir la carpeta de cabeceras
 include_directories(include)
@@ -21,5 +22,5 @@ add_executable(emisor
 # Enlaces necesarios: 
 # rt: Para Message Queues (POSIX RealTime)
 # m: Para math.h (pow, tgamma)
-target_link_libraries(scheduler rt m)
+target_link_libraries(scheduler PRIVATE Threads::Threads rt m)
 target_link_libraries(emisor rt)
