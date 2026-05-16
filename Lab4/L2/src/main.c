@@ -26,7 +26,8 @@ static void* ThreadWrapper(void* arg) {
   cpu_set_t cpuset;
   CPU_ZERO(&cpuset);
   CPU_SET((unsigned)msg->core, &cpuset);
-  if (pthread_setaffinity_np(pthread_self(), sizeof(cpuset), &cpuset) != 0) {
+  if (pthread_setaffinity_np(pthread_self(), sizeof(cpuset),
+                             &cpuset) != 0) {
     perror("pthread_setaffinity_np");
   }
 
@@ -67,25 +68,25 @@ static void* ThreadWrapper(void* arg) {
 }
 
 int main(void) {
-  /* Grader redirects stdout to a file; default full buffering hides lines until
-   * exit so grep sees no Core Real: lines. */
   setbuf(stdout, NULL);
 
   struct mq_attr qattr;
   memset(&qattr, 0, sizeof(qattr));
-  /* Host /proc/sys/fs/mqueue/msg_max is often 10; mq_maxmsg above it => EINVAL.*/
   qattr.mq_maxmsg = 10;
   qattr.mq_msgsize = sizeof(Mensaje);
 
   struct stat mqfs;
-  if (stat("/dev/mqueue", &mqfs) != 0 || !S_ISDIR(mqfs.st_mode)) {
+  if (stat("/dev/mqueue", &mqfs) != 0 ||
+      !S_ISDIR(mqfs.st_mode)) {
     printf(
-        "[SCHEDULER] /dev/mqueue no existe — en root: mkdir -p /dev/mqueue "
-        "&& mount -t mqueue none /dev/mqueue\n");
+        "[SCHEDULER] /dev/mqueue no existe. Como root ejecute:\n"
+        "  mkdir -p /dev/mqueue && "
+        "mount -t mqueue none /dev/mqueue\n");
     return 1;
   }
 
-  mqd_t mq = mq_open(QUEUE_NAME, O_CREAT | O_RDONLY, 0666, &qattr);
+  mqd_t mq =
+      mq_open(QUEUE_NAME, O_CREAT | O_RDONLY, 0666, &qattr);
   if (mq == (mqd_t)-1) {
     perror("mq_open");
     return 1;
@@ -129,7 +130,8 @@ int main(void) {
     pthread_attr_destroy(&thr_attr);
   }
 
-  while (atomic_load_explicit(&pending_workers, memory_order_relaxed) > 0) {
+  while (atomic_load_explicit(&pending_workers,
+                              memory_order_relaxed) > 0) {
     usleep(500);
   }
 
