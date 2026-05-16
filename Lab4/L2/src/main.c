@@ -33,7 +33,6 @@ static void* ThreadWrapper(void* arg) {
     perror("setpriority");
   }
 
-  /* Allow the kernel to migrate this thread to the requested CPU */
   sched_yield();
   usleep(2000);
 
@@ -42,7 +41,7 @@ static void* ThreadWrapper(void* arg) {
       (actual_core == msg->core) ? "[CONFIRMED]" : "[MISMATCH]";
 
   printf(
-      "[THREAD | TID: %d] Task %d -> Core Requested: %d | Core Actual: %d "
+      "[THREAD | TID: %d] Tarea %d -> Core Requested: %d | Core Real: %d "
       "%s\n",
       tid, msg->id_tarea, msg->core, actual_core, confirm);
 
