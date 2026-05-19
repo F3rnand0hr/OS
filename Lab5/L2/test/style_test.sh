@@ -1,13 +1,14 @@
 #!/bin/bash
 
 # Define the source file to check
-SOURCE_FILE="../src/main.c ../src/functions.c"
+SOURCE_FILE="../src/main.c"
 HEADER_FILE="../include/functions.h"
+FUNCTIONS_FILE="../src/functions.c"
 
 echo "--- Running static analysis with cpplint ---"
 # Build a list of files to pass to cpplint only if they exist
 FILES=( )
-FILES+=(${SOURCE_FILE})
+FILES+=("${SOURCE_FILE}")
 if [ -f "${HEADER_FILE}" ]; then
     FILES+=("${HEADER_FILE}")
 fi

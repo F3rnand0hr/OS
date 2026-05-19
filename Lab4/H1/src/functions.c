@@ -12,7 +12,6 @@ int ReadInstructions(Instruction *plan) {
   }
 
   int current_burst = 0;
-  // Tu misma lógica de fscanf, guardando en el arreglo 'plan'
   while (current_burst < 30 &&
          fscanf(file, "%s %d %d %d", plan[current_burst].policyStr,
                 &plan[current_burst].p1, &plan[current_burst].p2,

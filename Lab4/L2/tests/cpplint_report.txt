@@ -1,0 +1,4 @@
+Done processing ../include/functions.h
+Done processing ../src/emisor.c
+Done processing ../src/functions.c
+Done processing ../src/main.c
