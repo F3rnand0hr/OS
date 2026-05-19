@@ -5,7 +5,7 @@ set(CMAKE_C_STANDARD 99)
 
 include_directories(include)
 
-add_executable(l3 src/main.c)
+add_executable(l3 src/main.c src/functions.c)
 
 # Importante: timer_create requiere la librería librt en sistemas Linux antiguos
 target_link_libraries(l3 rt)
